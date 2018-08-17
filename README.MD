@@ -11,4 +11,4 @@ Before you start
 - Remember to solve things as simply as possible
 - Remember to refactor after each passing test
 ## Allow the Add method to handle an unknown amount of numbers
-## Handle empty Strings betweeen kommas and trailing and leading blanks
+## Handle empty Strings between kommas and trailing/leading spaces
