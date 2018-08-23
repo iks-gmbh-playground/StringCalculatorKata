@@ -9,7 +9,13 @@ public class StringCalculator {
 		}
 
 		int result = 0;
-		for (String number : var.split(",")) {
+
+		String delimiter = ",";
+		if (var.startsWith("//")) {
+			delimiter = var.charAt(2) + "";
+			var = var.substring(4);
+		}
+		for (String number : var.split("[" + delimiter + "|\\n]")) {
 			result += stringToInt(number);
 		}
 
@@ -22,8 +28,20 @@ public class StringCalculator {
 		if (!number.equals("")) {
 			return Integer.parseInt(number);
 		}
-		
+
 		return 0;
 	}
 
 }
+
+// int start = 0;
+//
+// for (int i = 0; i < var.length(); i++) {
+// if (var.charAt(i) == ',' || var.charAt(i) == '\n') {
+// String number = var.substring(start, i);
+// result += stringToInt(number);
+// start = i + 1;
+// }
+// }
+// String rest = var.substring(start);
+// result += stringToInt(rest);

@@ -39,7 +39,7 @@ class StringCalculatorTest {
 		// Assert
 		assertEquals(expected, actual);
 	}
-	
+
 	@Test
 	void return2WhenInputIsTwo() {
 		// Arrange
@@ -52,76 +52,104 @@ class StringCalculatorTest {
 		// Assert
 		assertEquals(expected, actual);
 	}
-	
+
 	@Test
 	void return7WhenInput3Komma4() {
 		// Arrange
 		String input = "3,4";
 		int expected = 7;
-		
+
 		// Act
 		int actual = calc.add(input);
-		
-		//Assert
+
+		// Assert
 		assertEquals(expected, actual);
 	}
-	
+
 	@Test
 	void returnSumWhenMultipleInput() {
-		//Arrange
+		// Arrange
 		String input = "3,5";
 		int expected = 8;
-		
-		//Act
+
+		// Act
 		int actual = calc.add(input);
-		
-		//Assert
+
+		// Assert
 		assertEquals(expected, actual);
 	}
-	
+
 	@Test
 	void returnSumWhenAmountOfInputIsUnknown() {
-		
-		//Arrange
+
+		// Arrange
 		String input = "3,7,120,3";
 		int expected = 133;
-		
-		//Act
+
+		// Act
 		int actual = calc.add(input);
-		
-		//Assert
+
+		// Assert
 		assertEquals(expected, actual);
-	
+
 	}
-	
+
 	@Test
 	void returnSumIfThereAreEmptyValues() {
-		
-		//Arrange
+
+		// Arrange
 		String input = "3,7,,120,3,";
 		int expected = 133;
-		
-		//Act
+
+		// Act
 		int actual = calc.add(input);
-		
-		//Assert
+
+		// Assert
 		assertEquals(expected, actual);
-	
+
 	}
-	
+
 	@Test
 	void returnSumIfThereAreEmptyValuesOrSpaces() {
-		
-		//Arrange
+
+		// Arrange
 		String input = "3,7,, , 120,3,";
 		int expected = 133;
-		
-		//Act
+
+		// Act
 		int actual = calc.add(input);
-		
-		//Assert
+
+		// Assert
 		assertEquals(expected, actual);
-	
+
+	}
+
+	@Test
+
+	void returnSumIfThereIsANewLine() {
+
+		// Arrange
+		String input = "3,7 \n 8, 9, 10";
+		int expected = 37;
+
+		// Act
+		int actual = calc.add(input);
+
+		// Assert
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	void returnSumIfThereIsASemicolon() {
+		// Arrange
+		String input = "//;\n12;35";
+		int expected = 47;
+
+		// Act
+		int actual = calc.add(input);
+
+		// Assert
+		assertEquals(expected, actual);
 	}
 
 }
